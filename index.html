@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hackney Streetscene Live Tracker</title>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 20px;">
+
+  <div id="streetscene-dashboard-container">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+      <p style="font-size: 0.9em; color: #555; margin: 0;">
+        <em>Status updated daily. Last checked: <span id="last-updated-date">Loading...</span></em>
+      </p>
+      <input type="text" id="streetscene-search" placeholder="Search projects..." onkeyup="filterStreetsceneTable()" style="padding: 8px; font-size: 0.9em;">
+    </div>
+
+    <table id="streetscene-table" style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95em;">
+      <thead>
+        <tr style="background-color: #1F4E78; color: #ffffff;">
+          <th style="padding: 10px; border: 1px solid #ddd;">Project / Scheme</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Status</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Location</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Consultation</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Schedule</th>
+          <th style="padding: 10px; border: 1px solid #ddd;">Works Scope</th>
+        </tr>
+      </thead>
+      <tbody id="streetscene-table-body">
+        <tr><td colspan="6" style="padding: 20px; text-align: center;">Loading data...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Exact URL pointing to your raw JSON file on GitHub:
+    const DATA_FEED_URL = "https://raw.githubusercontent.com/dbesbrode1806/hackney-streetscene-tracker/main/projects.json";
+
+    async function fetchStreetsceneData() {
+      try {
+        const response = await fetch(DATA_FEED_URL);
+        const data = await response.json();
+        
+        document.getElementById('last-updated-date').innerText = data.last_updated || 'Today';
+        const tbody = document.getElementById('streetscene-table-body');
+        tbody.innerHTML = '';
+
+        data.projects.forEach((proj, idx) => {
+          const row = document.createElement('tr');
+          row.style.backgroundColor = idx % 2 === 0 ? '#F2F5F9' : '#FFFFFF';
+          
+          row.innerHTML = `
+            <td style="padding: 10px; border: 1px solid #ddd; font-weight: bold;">${proj.name}</td>
+            <td style="padding: 10px; border: 1px solid #ddd; text-align: center;">${proj.status}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${proj.location}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${proj.consultation}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${proj.schedule}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${proj.works}</td>
+          `;
+          tbody.appendChild(row);
+        });
+      } catch (err) {
+        console.error(err);
+        document.getElementById('streetscene-table-body').innerHTML = 
+          `<tr><td colspan="6" style="padding: 20px; text-align: center; color: red;">Error loading live data feed.</td></tr>`;
+      }
+    }
+
+    function filterStreetsceneTable() {
+      const input = document.getElementById("streetscene-search").value.toLowerCase();
+      const rows = document.querySelectorAll("#streetscene-table-body tr");
+      rows.forEach(row => {
+        row.style.display = row.innerText.toLowerCase().includes(input) ? "" : "none";
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", fetchStreetsceneData);
+  </script>
+</body>
+</html>
