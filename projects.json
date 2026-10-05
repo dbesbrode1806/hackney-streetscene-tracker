@@ -1,0 +1,21 @@
+{
+  "last_updated": "05 October 2026",
+  "projects": [
+    {
+      "name": "Amhurst Road & Pembury Circus Transformation",
+      "status": "Live Works",
+      "location": "Amhurst Road, Mare Street & Pembury Circus Junction",
+      "consultation": "Concluded",
+      "schedule": "Feb 2025 \u2013 Mid/Late 2026",
+      "works": "Major redesign of Pembury Circus junction, bus access restrictions on Amhurst Rd/Mare St, high-street repaving."
+    },
+    {
+      "name": "Nile Street Public Realm Improvements",
+      "status": "Live Works",
+      "location": "Nile Street (Provost St to Britannia St), Hoxton West",
+      "consultation": "Closed Sep 2025",
+      "schedule": "Jan 2026 \u2013 Autumn 2026",
+      "works": "Raised pedestrian footways, continuous pavement installation across Provost St junction, tree planting."
+    }
+  ]
+}
