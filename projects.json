@@ -1,21 +1,54 @@
 {
   "last_updated": "05 October 2026",
+  "total_items": 6,
   "projects": [
     {
       "name": "Amhurst Road & Pembury Circus Transformation",
       "status": "Live Works",
-      "location": "Amhurst Road, Mare Street & Pembury Circus Junction",
-      "consultation": "Concluded",
-      "schedule": "Feb 2025 \u2013 Mid/Late 2026",
-      "works": "Major redesign of Pembury Circus junction, bus access restrictions on Amhurst Rd/Mare St, high-street repaving."
+      "location": "Amhurst Road, Mare Street & Pembury Circus Junction, Hackney Central",
+      "consultation": "Concluded (Feb 2024)",
+      "schedule": "Feb 2025 – Mid/Late 2026",
+      "works": "Major junction safety redesign, bus access restrictions, high street urban realm repaving."
     },
     {
       "name": "Nile Street Public Realm Improvements",
       "status": "Live Works",
       "location": "Nile Street (Provost St to Britannia St), Hoxton West",
       "consultation": "Closed Sep 2025",
-      "schedule": "Jan 2026 \u2013 Autumn 2026",
+      "schedule": "Jan 2026 – Autumn 2026",
       "works": "Raised pedestrian footways, continuous pavement installation across Provost St junction, tree planting."
+    },
+    {
+      "name": "Bradstock Road & Cassland Road Junction Scheme",
+      "status": "Live Works",
+      "location": "Bradstock Road & Cassland Road, South Hackney",
+      "consultation": "Concluded",
+      "schedule": "March 2026 – Late 2026",
+      "works": "Parallel walking/cycling crossing over Cassland Road, footway widening, motor vehicle access restrictions."
+    },
+    {
+      "name": "Chatsworth Road Liveable Neighbourhood",
+      "status": "Live Works",
+      "location": "Chatsworth Road corridor, Brooksby’s Walk & side streets",
+      "consultation": "Concluded",
+      "schedule": "Late 2025 – Late 2026",
+      "works": "Phased roll-out of central Chatsworth Road bus gate, traffic filter installations (modal filters)."
+    },
+    {
+      "name": "Connecting Hoxton (Liveable Neighbourhood)",
+      "status": "Upcoming Works",
+      "location": "Hoxton St, Stanway St, Purcell Gardens, Regan Way, Ivy St",
+      "consultation": "Concluded Sep 2025",
+      "schedule": "Late 2026 – 2027",
+      "works": "Public realm design finalized; upcoming physical delivery of bus gate on Hoxton St, footway improvements, public garden upgrades."
+    },
+    {
+      "name": "School Streets Infrastructure Expansion",
+      "status": "Live & Rolling",
+      "location": "Selected schools borough-wide (e.g. Cecilia Rd / Downs Park Rd)",
+      "consultation": "Location-specific",
+      "schedule": "Rolling rollout through 2026",
+      "works": "Installation of physical ANPR camera posts, operational street signage, and timed access barriers."
     }
   ]
 }
